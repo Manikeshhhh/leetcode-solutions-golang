@@ -21,3 +21,17 @@ func hammingWeight(num uint32) int {
     return count
 } */
 
+//better solution using bitwise operator 
+func hammingWeight(num uint32) int {
+
+    n:=int(num)
+    count:=0;
+    helper:=1;
+    for i:=0;i<32;i++{
+        if (helper & n) != 0{
+            count++
+        }
+        helper=helper<<1;
+    }
+    return count
+}
